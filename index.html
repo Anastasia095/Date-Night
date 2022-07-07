@@ -1,12 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>poo poo peepee</h1>
-</body>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Date Night</title>
+        <link rel="stylesheet" href="/assets/css/style.csss">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
+	</head>
+  	<body>
+		<section class="section">
+			<div class="container">
+				<!-- Start Carousel -->
+				<div id="carousel-demo" class="carousel">
+					<div class="item-1">
+						<!-- Slide Content -->
+                        <img src="/assets/images/date2.jpeg" alt="Cooking Couple">
+					</div>
+					<div class="item-2">
+						<!-- Slide Content -->
+                        <img src="/assets/images/date5.jpeg" alt="Cooking Couple">
+					</div>
+					<div class="item-3">
+						<!-- Slide Content -->
+                        <img src="/assets/images/date3.jpeg" alt="Finished Food">
+					</div>
+					<div class="item-4">
+						<!-- Slide Content -->
+                        <img src="/assets/images/date5.jpeg" alt="Movie Fort">
+					</div>
+				</div>
+				<!-- End Carousel -->
+			</div>
+		</section>
+
+		<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+		<script>
+		bulmaCarousel.attach('#carousel-demo', {
+			slidesToScroll: 1,
+			slidesToShow: 4
+		});
+		</script>
+	</body>
 </html>
