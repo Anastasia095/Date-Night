@@ -32,8 +32,16 @@ var movie = {
         fetch(
             "https://www.ombdapi.com/?apikey=7ec778d5" + "&i=tt" + "1877830"
         )
+
+        .then((response) => this.displayMovie(data));
+    },
+    displayMovie: function(data) {
+    console.log(data);
+    const { image } = data;
+    console.log(image);
     }
-}
+            
+};
 
 
 
