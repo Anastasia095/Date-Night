@@ -24,6 +24,17 @@ var recipe = {
 
 };
 
+var movie = {
+    apiKey: "7ec778d5",
+
+    fetchMovie: function (a) {
+       
+        fetch(
+            "https://www.ombdapi.com/?apikey=7ec778d5" + "&i=tt" + "1877830"
+        )
+    }
+}
+
 
 
 console.log("Before Event");
