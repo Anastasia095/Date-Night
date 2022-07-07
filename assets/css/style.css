@@ -1,3 +1,8 @@
 body {
     background-color: white;
 }
+
+.btn_wrapper {
+    margin-left: 50%;
+}
+
