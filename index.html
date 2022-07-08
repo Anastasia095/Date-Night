@@ -4,7 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Date Night</title>
-        <link rel="stylesheet" href="/assets/css/style.css">
+
+		<!-- google fonts  -->		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Neonderthaw&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
 	</head>
@@ -15,36 +21,50 @@
 				<div id="carousel-demo" class="carousel">
 					<div class="item-1">
 						<!-- Slide Content -->
-                        <img src="/assets/images/date2.jpeg" alt="Cooking Couple">
+                        <img src="assets/images/date1.jpeg" alt="Dinner Table"/>
 					</div>
 					<div class="item-2">
 						<!-- Slide Content -->
-                        <img src="/assets/images/date5.jpeg" alt="Cooking Couple">
+                        <img src="assets/images/date2.jpeg" alt="Cooking Couple"/>
 					</div>
 					<div class="item-3">
 						<!-- Slide Content -->
-                        <img src="/assets/images/date3.jpeg" alt="Finished Food">
+                        <img src="assets/images/date3.jpeg" alt="Finished Food"/>
 					</div>
 					<div class="item-4">
 						<!-- Slide Content -->
-                        <img src="/assets/images/date5.jpeg" alt="Movie Fort">
+                        <img src="assets\images\date4.jpeg" alt="Movie Projector"/>
+					</div>
+					<div class="item-5">
+						<!-- Slide Content -->
+                        <img src="assets/images/date5.jpeg" alt="Movie Fort"/>
+					</div>
+					<div class="item-6">
+						<!-- Slide Content -->
+                        <img src="assets/images/date 6.jpeg" alt="Movie Theater"/>
 					</div>
 				</div>
 				<!-- End Carousel -->
 			</div>
 		</section>
 		<div class="btn_wrapper">
+			<!-- start button -->
 			<button id="start">
-				Start
+				We need pretty button
 			</button>
-			<img src="" alt="" class="icon" />
 		</div>
-
+		<div class="wrapper">
+			<div id="card">
+				<h3 id="title"> Name of the Dish</h3>
+				<img src="" alt="" id="icon" />
+				<div id="summary"></div>
+			</div>
+		</div>
 		<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
 		<script>
 		bulmaCarousel.attach('#carousel-demo', {
 			slidesToScroll: 1,
-			slidesToShow: 4
+			slidesToShow: 1
 		});
 		</script>
 		<script src="assets/js/script.js"></script>
