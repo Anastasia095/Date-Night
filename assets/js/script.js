@@ -3,7 +3,7 @@ var startbtn = document.getElementById("start");
 var recipe = {
     APIKey: "51f5155dad22491daa0d2fd70c0fed4f",
 
-    fetchRecipe: function (a) {
+    fetchRecipe: function () {
 
         fetch(
             "https://api.spoonacular.com/recipes/random?apiKey="
@@ -16,9 +16,21 @@ var recipe = {
         .then((data) => this.displayRecipe(data));
     },
     displayRecipe: function (data) {
-    console.log(data);
-    const { image } = data;
-    console.log(image);
+    console.log(data.recipes);
+    // console.log(data.recipes[0]);
+    // console.log(data.recipes[0].image);
+    var imgSize = "240x150.jpg";
+    const { image } = data.recipes[0];
+    const { title } = data.recipes[0];
+    // const { summary } = data.recipes[0];
+    const { instructions } = data.recipes[0];
+    console.log(instructions);
+    var imgResize = image.slice(0, -11) + imgSize;
+    
+
+    document.getElementById("icon").src = imgResize;
+    document.getElementById("title").innerText = title;
+    document.getElementById("summary").innerHTML = instructions;
     }
 
 
