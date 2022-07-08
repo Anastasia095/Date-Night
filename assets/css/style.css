@@ -3,6 +3,16 @@ body {
     background-color: white;
 }
 
+.container {
+    overflow:hidden ;
+}
+.item{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .wrapper {
     padding: 1%;
     text-align: center;
@@ -45,4 +55,15 @@ body {
     /* font-family: 'Neonderthaw', cursive; */
     font-family: 'Charmonman', cursive;
     /* font-family: 'Homemade Apple', cursive; */
+}
+
+
+/* Media query for carousel */
+@media(min-width: 1000px){
+    .item{
+        height: 100vh;
+    }
+    img{
+        object-fit: cover;
+    }
 }
