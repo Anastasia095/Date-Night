@@ -19,7 +19,7 @@ var recipe = {
     console.log(data.recipes);
     // console.log(data.recipes[0]);
     // console.log(data.recipes[0].image);
-    var imgSize = "312x231.jpg";
+    var imgSize = "240x150.jpg";
     const { image } = data.recipes[0];
     const { title } = data.recipes[0];
     // const { summary } = data.recipes[0];
