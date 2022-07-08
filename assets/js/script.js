@@ -3,7 +3,7 @@ var startbtn = document.getElementById("start");
 var recipe = {
     APIKey: "51f5155dad22491daa0d2fd70c0fed4f",
 
-    fetchRecipe: function (a) {
+    fetchRecipe: function () {
 
         fetch(
             "https://api.spoonacular.com/recipes/random?apiKey="
@@ -17,8 +17,12 @@ var recipe = {
     },
     displayRecipe: function (data) {
     console.log(data);
-    const { image } = data;
-    console.log(image);
+    console.log(data.recipes[0]);
+    console.log(data.recipes[0].image);
+    
+    const { image } = data.recipes[0].image;
+    document.getElementById("icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+
     }
 
 
