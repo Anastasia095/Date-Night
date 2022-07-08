@@ -16,13 +16,21 @@ var recipe = {
         .then((data) => this.displayRecipe(data));
     },
     displayRecipe: function (data) {
-    console.log(data);
-    console.log(data.recipes[0]);
-    console.log(data.recipes[0].image);
+    console.log(data.recipes);
+    // console.log(data.recipes[0]);
+    // console.log(data.recipes[0].image);
+    var imgSize = "240x150.jpg";
+    const { image } = data.recipes[0];
+    const { title } = data.recipes[0];
+    // const { summary } = data.recipes[0];
+    const { instructions } = data.recipes[0];
+    console.log(instructions);
+    var imgResize = image.slice(0, -11) + imgSize;
     
-    const { image } = data.recipes[0].image;
-    document.getElementById("icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
 
+    document.getElementById("icon").src = imgResize;
+    document.getElementById("title").innerText = title;
+    document.getElementById("summary").innerHTML = instructions;
     }
 
 
