@@ -1,4 +1,21 @@
+var omdbID = "0000000";
+
+
+function getRandomInt() {
+    min = Math.ceil(1);
+    max = Math.floor(9916857);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+var omdbid1 = omdbID + getRandomInt();
+var omdbidLast = omdbid1.slice(-7);
+
+console.log("test" + omdbid1);
+console.log("test " + omdbidLast);
+
 var startbtn = document.getElementById("start");
+
+
 
 var recipe = {
     APIKey: "51f5155dad22491daa0d2fd70c0fed4f",
@@ -19,7 +36,7 @@ var recipe = {
     console.log(data.recipes);
     // console.log(data.recipes[0]);
     // console.log(data.recipes[0].image);
-    var imgSize = "240x150.jpg";
+    var imgSize = "312x231.jpg";
     const { image } = data.recipes[0];
     const { title } = data.recipes[0];
     // const { summary } = data.recipes[0];
@@ -37,14 +54,13 @@ var recipe = {
 };
 
 var movie = {
-    apiKey: "7ec778d5",
-    omdbID: 0,
+    apiKey: "7ec448d5",
 
-    fetchMovie: function () {
-       
+    fetchMovie: function (titleID) {
+
         fetch(
             "http://www.omdbapi.com/?i=tt"
-            + this.omdbID
+            + titleID
             + "&apikey=" 
             + this.apiKey
         )
@@ -84,7 +100,7 @@ startbtn.addEventListener('click', function (event) {
     //     return;
 
     recipe.fetchRecipe();
-    movie.fetchMovie();
+    movie.fetchMovie(omdbidLast);
 
 });
 
