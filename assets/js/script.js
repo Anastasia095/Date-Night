@@ -104,4 +104,10 @@ startbtn.addEventListener('click', function (event) {
 
 });
 
+var recipe = document.getElementById("title");
+
+function saveLastCombo() {
+    
+}
+
 
