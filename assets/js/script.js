@@ -35,6 +35,7 @@ var recipe = {
     displayRecipe: function (data) {
     console.log(data.recipes);
     var imgSize = "312x231.jpg";
+
     const { image } = data.recipes[0];
     const { title } = data.recipes[0];
     const { summary } = data.recipes[0];
