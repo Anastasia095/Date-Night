@@ -49,6 +49,14 @@ background-color: #36f1cd;
 
 #title {
     padding: 0.5%;
+    /* font-family: 'Neonderthaw', cursive; */
+    /* font-family: 'Charmonman', cursive; */
+    /* font-family: 'Homemade Apple', cursive; */
+}
+
+#movieTitle {
+    padding: 0.5%;
+
 }
 
 #card {
@@ -62,13 +70,6 @@ background-color: #36f1cd;
 
     background-color: #13c4a3;
     ;
-}
-
-
-#title {
-    /* font-family: 'Neonderthaw', cursive; */
-    /* font-family: 'Charmonman', cursive; */
-    /* font-family: 'Homemade Apple', cursive; */
 }
 
 
