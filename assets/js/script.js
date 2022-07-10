@@ -119,34 +119,6 @@ startbtn.addEventListener('click', function (event) {
 
 
 });
-// CONSOLE LOG STUFF FOR COMBINATIONS 
 
-// var recipe = document.getElementById("title");
-// var movie = document.getElementById("?")
-
-// function saveLastCombo() {
-//     var userCombo = {
-//         recipe: recipe.value,
-//         movie: movie.value,?
-//     };
-
-//     localStorage.setItem("userCombo", JSON.stringify(userCombo));
-// }
-
-// function renderLastCombo(){
-//     var lastCombo =JSON.parse(localStorage.getItem("userCombo"));
-
-//     if (lastCombo !== null){
-//         document.getElementById("saved-title").innerHTML = lastCombo.recipe;
-//         document.getElementById("saved-movie").innerHTML = lastCombo.movie;
-//     } else {
-//         return;
-//     }
-// }
-
-// function init() {
-//     renderLastCombo();
-// }
-// init();
 
 
