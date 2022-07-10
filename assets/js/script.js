@@ -42,7 +42,9 @@ var recipe = {
     const { instructions } = data.recipes[0];
     console.log(instructions);
     var imgResize = image.slice(0, -11) + imgSize;
-    
+    //local storage start here
+
+    localStorage.setItem("Recipe", title);
 
     document.getElementById("icon").src = imgResize;
     document.getElementById("title").innerText = title;
@@ -78,6 +80,9 @@ var movie = {
         const { Title } = data;
         const { Poster } = data;
         // var imgResize = image.slice(0, -11) + imgSize;
+
+        localStorage.setItem("Movie", Title);
+
         document.getElementById("iconM").src = Poster;
         document.getElementById("movieTitle").innerText = Title;
         // document.getElementById("summary").innerHTML = instructions;
@@ -94,43 +99,54 @@ var movie = {
 console.log("Before Event");
 startbtn.addEventListener('click', function (event) {
     console.log("Event");
-    // var selectedButton = event.target;
-    // if (selectedButton.tagName != 'BUTTON')
-    //     return;
+    var selectedButton = event.target;
+    if (selectedButton.tagName != 'BUTTON')
+        return;
 
-    // recipe.fetchRecipe();
-    // movie.fetchMovie(omdbidLast);
-    saveLastCombo();
-    renderLastCombo();
+    recipe.fetchRecipe();
+    movie.fetchMovie(omdbidLast);
+    // saveLastCombo();
+    // renderLastCombo();
+    var recipe123 = document.getElementById("saved-title");
+    var lastRecipe = localStorage.getItem("Recipe");
+    recipe123.textContent=lastRecipe;
+
+    var movie123 = document.getElementById("saved-movie");
+    var lastMovie = localStorage.getItem("Movie");
+    movie123.textContent=lastMovie;
+
+
+
 
 });
+// CONSOLE LOG STUFF FOR COMBINATIONS 
 
-var recipe = document.getElementById("title");
-var movie = document.getElementById("?")
+// var recipe = document.getElementById("title");
+// var movie = document.getElementById("?")
 
-function saveLastCombo() {
-    var userCombo = {
-        recipe: recipe.value,
-        movie: movie.value,?
-    };
+// function saveLastCombo() {
+//     var userCombo = {
+//         recipe: recipe.value,
+//         movie: movie.value,?
+//     };
 
-    localStorage.setItem("userCombo", JSON.stringify(userCombo));
-}
+//     localStorage.setItem("userCombo", JSON.stringify(userCombo));
+// }
 
-function renderLastCombo(){
-    var lastCombo =JSON.parse(localStorage.getItem("userCombo"));
+// function renderLastCombo(){
+//     var lastCombo =JSON.parse(localStorage.getItem("userCombo"));
 
-    if (lastCombo !== null){
-        document.getElementById("saved-title").innerHTML = lastCombo.recipe;
-        document.getElementById("saved-movie").innerHTML = lastCombo.movie;
-    } else {
-        return;
-    }
-}
+//     if (lastCombo !== null){
+//         document.getElementById("saved-title").innerHTML = lastCombo.recipe;
+//         document.getElementById("saved-movie").innerHTML = lastCombo.movie;
+//     } else {
+//         return;
+//     }
+// }
 
-function init() {
-    renderLastCombo();
-}
-init();
+// function init() {
+//     renderLastCombo();
+// }
+// init();
 
 
