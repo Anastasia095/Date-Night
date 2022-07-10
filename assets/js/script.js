@@ -35,13 +35,16 @@ var recipe = {
     displayRecipe: function (data) {
     console.log(data.recipes);
     var imgSize = "312x231.jpg";
+
     const { image } = data.recipes[0];
     const { title } = data.recipes[0];
     const { summary } = data.recipes[0];
     const { instructions } = data.recipes[0];
     console.log(instructions);
     var imgResize = image.slice(0, -11) + imgSize;
-    
+    //local storage start here
+
+    localStorage.setItem("Recipe", title);
 
     document.getElementById("icon").src = imgResize;
     document.getElementById("title").innerText = title;
@@ -81,6 +84,9 @@ var movie = {
         const { Genre } = data;
         const { Year } = data;
         // var imgResize = image.slice(0, -11) + imgSize;
+
+        localStorage.setItem("Movie", Title);
+
         document.getElementById("iconM").src = Poster;
         document.getElementById("movieTitle").innerText = Title;
         document.getElementById("plot").innerHTML = "<b>Plot: </b>" + Plot;
@@ -104,7 +110,18 @@ startbtn.addEventListener('click', function (event) {
         return;
     recipe.fetchRecipe();
     movie.fetchMovie(omdbidLast);
+    // saveLastCombo();
+    // renderLastCombo();
+    var recipe123 = document.getElementById("saved-title");
+    var lastRecipe = localStorage.getItem("Recipe");
+    recipe123.textContent=lastRecipe;
+
+    var movie123 = document.getElementById("saved-movie");
+    var lastMovie = localStorage.getItem("Movie");
+    movie123.textContent=lastMovie;
+
 
 });
+
 
 

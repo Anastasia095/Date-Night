@@ -14,7 +14,16 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
 	</head>
-  	<body>
+	<section class="hero is-link">
+		<div class="hero-body">
+		  <p class="title" id="logo">
+			Date Night <img src="assets/images/iconmonstr-favorite-13.svg" alt="Heart">
+		  </p>
+		  <p class="subtitle" id="sub">
+			Don't know what to do for the date night? We do.
+		  </p>
+		</div>
+	  </section>
 		<section class="section">
 			<div class="container">
 				<!-- Start Carousel -->
@@ -22,43 +31,49 @@
 					<div class="item-1">
 						<!-- Slide Content -->
 						<figure class="image is-1152x648">
-                        <img src="assets/images/date1.jpg" alt="Dinner Table"/>
+                        <img class="is-rounded" src="assets/images/date1.jpg" alt="Dinner Table"/>
 					</figure>
 					</div>
 					<div class="item-2">
 						<!-- Slide Content -->
 						<figure class="image is-1152x648">
-                        <img src="assets/images/date2.jpg" alt="Cooking Couple"/>
+                        <img class="is-rounded" src="assets/images/date2.jpg" alt="Dinner outside"/>
 					</figure>
 					</div>
 					<div class="item-3">
 						<!-- Slide Content -->
 						<figure class="image is-1152x648">
-                        <img src="assets/images/date3.jpg" alt="Finished Food"/>
+                        <img class="is-rounded" src="assets/images/date3.jpg" alt="Finished Food"/>
 					</figure>
 					</div>
 					<div class="item-4">
 						<!-- Slide Content -->
-                        <img src="assets\images\date4.webp" alt="Movie Projector"/>
+						<figure class="image is-1152x648">
+                        <img class="is-rounded" src="assets\images\date4.webp" alt="Cooking food together"/>
+					</figure>
 					</div>
 					<div class="item-5">
 						<!-- Slide Content -->
-                        <img src="assets/images/date5.jpg" alt="Movie Fort"/>
+						<figure class="image is-1152x648">
+                        <img class="is-rounded" src="assets/images/date5.jpg" alt="Cooking with pans"/>
+					</figure>
 					</div>
 					<div class="item-6">
 						<!-- Slide Content -->
-                        <img src="assets/images/date6.jpg" alt="Movie Theater"/>
+						<figure class="image is-1152x648">
+                        <img class="is-rounded" src="assets/images/date6.jpg" alt="Couple eating popcorn"/>
+					</figure>
 					</div>
 					<div class="item-7">
 						<!-- Slide Content -->
 						<figure class="image is-1152x648">
-                        <img src="assets/images/date7.jpg" alt="Movie Theater"/>
+                        <img class="is-rounded" src="assets/images/date7.jpg" alt="Watching on iPad"/>
 					</figure>
 					</div>
 					<div class="item-8">
 						<!-- Slide Content -->
 						<figure class="image is-1152x648">
-                        <img src="assets/images/date8.jpg" alt="Movie Theater"/>
+                        <img class="is-rounded" src="assets/images/date8.jpg" alt="Watching on couch"/>
 					</figure>
 					</div>
 				</div>
@@ -67,20 +82,31 @@
 		</section>
 		<div class="btn_wrapper">
 			<!-- start button -->
-			<button id="start">
-				We need pretty button
+			<button class="button is-rounded" id="start">
+				Generate
 			</button>
 		</div>
 		<div class="wrapper">
 			<div id="card">
 				<h3 id="title"> Name of the Dish</h3>
-				<img src="https://sun9-80.userapi.com/impf/fRo6t0F1XhD-eKKYucGBrnU20ydg2Js7VqA44Q/4wdLRhmgp5I.jpg?size=480x335&quality=95&sign=d2e63864b8cc5bc0ba81c331afd28edd&type=album" alt="" id="icon" />
+				<img src="assets/images/iconmonstr-eat-2.svg" alt="Utensil icon" id="icon" /></figure>
 				<div id="summary"></div>
 			</div>
+		</div>
+		<div>
+			<div class="wrapper">
+				<div id="card">
+				<h2>Previous Combinations:</h2>
+				<p>Recipe: <span id="saved-title"></span></p>
+				<p>Movie: <span id="saved-movie"></span></p>
+				</div>
+
+			</div>
+		</div>
 
 			<div id="mCard">
 				<h3 id="movieTitle"> Name of the Movie</h3>
-				<img src="https://sun9-32.userapi.com/impf/-_Ddi1H_FPxSQNonHrYatWGG5n15hoexNSZXmQ/4H95hR4i4Wc.jpg?size=480x335&quality=95&sign=259e4739b9ebd8fe7472df1334cd58bd&type=album" alt="" id="iconM" />
+				<img src="assets/images/iconmonstr-video-camera-11.svg" alt="" id="Camera icon" />
 				<div id="genre"></div>
 				<div id="year"></div>
 				<div id="plot"></div>
@@ -92,6 +118,7 @@
 			slidesToScroll: 1,
 			slidesToShow: 1,
 			infinite: true,
+			pagination: false,
 			autoplay: true,
 			pauseOnHover: true,
 			breakpoints: 

@@ -1,6 +1,18 @@
 body {
     font-family: monospace;
-    background-color: white;
+    background-color: #32322c;
+}
+
+.hero-body {
+background-color: #36f1cd;
+}
+
+#logo {
+    color: black;
+}
+
+#sub {
+    color: black;
 }
 
 .container {
@@ -27,6 +39,10 @@ body {
     text-align: center;
 }
 
+#start {
+    background-color: #39A0ED;
+}
+
 #icon {
     padding: 1%;
 }
@@ -44,6 +60,7 @@ body {
 }
 
 #card {
+    margin-right: 0.5%;
     padding: 1%;
     border-radius: 15px;
     border: solid;
@@ -51,8 +68,8 @@ body {
 
     width: 30%;
 
-    background-color: #90d5ec;
-    background-image: linear-gradient(315deg, #90d5ec 0%, #fc575e 74%);
+    background-color: #13c4a3;
+    ;
 }
 
 
@@ -75,27 +92,6 @@ body {
 
     width: 30%;
 
-    background-color: #90d5ec;
-    background-image: linear-gradient(315deg, #90d5ec 0%, #fc575e 74%);
+    background-color: #13c4a3;
+    
 }
-
-#guessCard {
-    margin-left: 0.5%;
-    padding: 1%;
-    border-radius: 15px;
-    border: solid;
-    border-width: thin;
-
-    width: 30%;
-
-    background-color: #90d5ec;
-    background-image: linear-gradient(315deg, #90d5ec 0%, #fc575e 74%);
-}
-
-#ageGuess {
-    display: block;
-    margin-left: 35%;
-
-
-}
-
