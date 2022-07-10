@@ -89,6 +89,14 @@
 		<div class="wrapper">
 			<div id="card">
 				<h3 id="title"> Name of the Dish</h3>
+				<div class="selectMenu">
+					<p>Select Vegenetrian or Dessert. (Optional)</p>
+					<select id='tags'>
+						<option value="">None</option>
+						<option value="vegetarian">Vegetarian</option>
+						<option value="dessert">Dessert</option>					
+					</select>
+				 </div>
 				<img src="assets/images/iconmonstr-eat-2.svg" alt="Utensil icon" id="icon" /></figure>
 				<div id="summary"></div>
 			</div>
@@ -103,10 +111,10 @@
 
 			</div>
 		</div>
-
+		<div class="wrapper">
 			<div id="mCard">
 				<h3 id="movieTitle"> Name of the Movie</h3>
-				<img src="assets/images/iconmonstr-video-camera-11.svg" alt="" id="Camera icon" />
+				<img src="assets/images/iconmonstr-video-camera-11.svg" alt="" id="iconM"  />
 				<div id="genre"></div>
 				<div id="year"></div>
 				<div id="plot"></div>
@@ -135,6 +143,7 @@
 				slidesToScroll: 1} ]
 		});
 		</script>
+		<script src="https://code.jquery.com/jquery-git.js"></script>
 		<script src="assets/js/script.js"></script>
 	</body>
 </html>
