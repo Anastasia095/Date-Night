@@ -1,17 +1,17 @@
 var omdbID = "0000000";
+var omdbidLast = 0;
 
 
-function getRandomInt() {
-    min = Math.ceil(1);
-    max = Math.floor(9916857);
-    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+function generateID(){
+    function getRandomInt() {
+        min = Math.ceil(1);
+        max = Math.floor(9916857);
+        return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+    }
+    
+    var omdbid1 = omdbID + getRandomInt();
+    omdbidLast = omdbid1.slice(-7);
 }
-
-var omdbid1 = omdbID + getRandomInt();
-var omdbidLast = omdbid1.slice(-7);
-
-console.log("test" + omdbid1);
-console.log("test " + omdbidLast);
 
 var startbtn = document.getElementById("start");
 
@@ -34,12 +34,11 @@ var recipe = {
     },
     displayRecipe: function (data) {
     console.log(data.recipes);
-    // console.log(data.recipes[0]);
-    // console.log(data.recipes[0].image);
-    var imgSize = "240x150.jpg";
+    var imgSize = "312x231.jpg";
+
     const { image } = data.recipes[0];
     const { title } = data.recipes[0];
-    // const { summary } = data.recipes[0];
+    const { summary } = data.recipes[0];
     const { instructions } = data.recipes[0];
     console.log(instructions);
     var imgResize = image.slice(0, -11) + imgSize;
@@ -60,7 +59,7 @@ var movie = {
 
         fetch(
             "http://www.omdbapi.com/?i=tt"
-            + titleID
+            + titleID 
             + "&apikey=" 
             + this.apiKey
         )
@@ -68,26 +67,26 @@ var movie = {
         .then((response) => {
             return response.json();
         })
-        // .then((data) => this.displayMovie(data));
+         .then((data) => this.displayMovie(data));
     },
     displayMovie: function (data) {
-    console.log(data.movies);
-    // console.log(data.movies[0]);
-    // console.log(data.movies[0].image);
-    var imgSize = "240x150.jpg";
-    // const { image } = data.movies[0];
-    const { title } = data.movies[0];
-    // const { summary } = data.movies[0];
-    const { instructions } = data.movies[0];
-    console.log(instructions);
-    var imgResize = image.slice(0, -11) + imgSize;
-    
-
-    document.getElementById("icon").src = imgResize;
-    document.getElementById("title").innerText = title;
-    document.getElementById("summary").innerHTML = instructions;
+    console.log(data);
+    console.log(data.Response)
+    console.log(data.Poster)
+    if (data.Response == "True" && data.Poster !== "N/A") {
+        var imgSize = "240x150.jpg";
+        const { Title } = data;
+        const { Poster } = data;
+        // var imgResize = image.slice(0, -11) + imgSize;
+        document.getElementById("iconM").src = Poster;
+        document.getElementById("movieTitle").innerText = Title;
+        // document.getElementById("summary").innerHTML = instructions;
+    } else {
+        console.log(data.Response)
+        generateID();
+        movie.fetchMovie(omdbidLast);
     }
-            
+    }            
 };
 
 
