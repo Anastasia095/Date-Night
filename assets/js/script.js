@@ -59,6 +59,7 @@ var movie = {
         fetch(
             "http://www.omdbapi.com/?i=tt"
             + titleID 
+            + "&type=movie"
             + "&apikey=" 
             + this.apiKey
         )
@@ -76,9 +77,15 @@ var movie = {
         var imgSize = "240x150.jpg";
         const { Title } = data;
         const { Poster } = data;
+        const { Plot } =  data;
+        const { Genre } = data;
+        const { Year } = data;
         // var imgResize = image.slice(0, -11) + imgSize;
         document.getElementById("iconM").src = Poster;
         document.getElementById("movieTitle").innerText = Title;
+        document.getElementById("plot").innerHTML = "<b>Plot: </b>" + Plot;
+        document.getElementById("genre").innerHTML = "<b>Genre: </b>" + Genre;
+        document.getElementById("year").innerHTML = "<b>Year: </b>" + Year;
         // document.getElementById("summary").innerHTML = instructions;
     } else {
         console.log(data.Response)
@@ -89,14 +96,12 @@ var movie = {
 };
 
 
-
 console.log("Before Event");
 startbtn.addEventListener('click', function (event) {
     console.log("Event");
-    // var selectedButton = event.target;
-    // if (selectedButton.tagName != 'BUTTON')
-    //     return;
-
+    var selectedButton = event.target;
+    if (selectedButton.tagName != 'BUTTON')
+        return;
     recipe.fetchRecipe();
     movie.fetchMovie(omdbidLast);
 
