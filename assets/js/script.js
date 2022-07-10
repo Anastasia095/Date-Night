@@ -1,7 +1,6 @@
 var omdbID = "0000000";
 var omdbidLast = 0;
 
-
 function generateID(){
     function getRandomInt() {
         min = Math.ceil(1);
@@ -20,11 +19,13 @@ var startbtn = document.getElementById("start");
 var recipe = {
     APIKey: "51f5155dad22491daa0d2fd70c0fed4f",
 
-    fetchRecipe: function () {
+    fetchRecipe: function (diet) {
 
         fetch(
             "https://api.spoonacular.com/recipes/random?apiKey="
             + this.APIKey
+            + "&tags="
+            + diet
         )
 
         .then((response) => {
@@ -38,7 +39,7 @@ var recipe = {
 
     const { image } = data.recipes[0];
     const { title } = data.recipes[0];
-    const { summary } = data.recipes[0];
+    // const { summary } = data.recipes[0];
     const { instructions } = data.recipes[0];
     console.log(instructions);
     var imgResize = image.slice(0, -11) + imgSize;
@@ -63,6 +64,7 @@ var movie = {
             "http://www.omdbapi.com/?i=tt"
             + titleID 
             + "&type=movie"
+            + "&plot=short"
             + "&apikey=" 
             + this.apiKey
         )
@@ -77,7 +79,6 @@ var movie = {
     console.log(data.Response)
     console.log(data.Poster)
     if (data.Response == "True" && data.Poster !== "N/A") {
-        var imgSize = "240x150.jpg";
         const { Title } = data;
         const { Poster } = data;
         const { Plot } =  data;
@@ -108,7 +109,11 @@ startbtn.addEventListener('click', function (event) {
     var selectedButton = event.target;
     if (selectedButton.tagName != 'BUTTON')
         return;
-    recipe.fetchRecipe();
+        //very little jQuery below =D
+    var diet = $('#tags').val();
+    
+    console.log(diet);
+    recipe.fetchRecipe(diet);
     movie.fetchMovie(omdbidLast);
     // saveLastCombo();
     // renderLastCombo();

@@ -95,3 +95,12 @@ background-color: #36f1cd;
     background-color: #13c4a3;
     
 }
+
+.selectMenu {
+    display:block;
+}
+
+#summary {
+    padding: 0.5%;
+    text-align: left;;
+}
