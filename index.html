@@ -20,7 +20,7 @@
 			Date Night <img src="assets/images/iconmonstr-favorite-13.svg" alt="Heart">
 		  </p>
 		  <p class="subtitle" id="sub">
-			Don't know what to do for the date night? We do.
+			Don't know what to do for the date night? We do. Click the button to generate a dinner movie combo.
 		  </p>
 		</div>
 	  </section>
@@ -85,14 +85,15 @@
 			<button class="button is-rounded" id="start">
 				Generate
 			</button>
+			
 		</div>
 		<div class="wrapper">
 			<div id="card">
 				<h3 id="title"> Name of the Dish</h3>
 				<div class="selectMenu">
-					<p>Select Vegenetrian or Dessert. (Optional)</p>
+					<p>Select Vegetarian Meal or Dessert. (Optional)</p>
 					<select id='tags'>
-						<option value="">None</option>
+						<option value="">No Preference</option>
 						<option value="vegetarian">Vegetarian</option>
 						<option value="dessert">Dessert</option>					
 					</select>
@@ -104,7 +105,7 @@
 		<div>
 			<div class="wrapper">
 				<div id="card">
-				<h2>Previous Combinations:</h2>
+				<h2 id="previous">Previous Combinations:</h2>
 				<p>Recipe: <span id="saved-title"></span></p>
 				<p>Movie: <span id="saved-movie"></span></p>
 				</div>
@@ -112,7 +113,7 @@
 			</div>
 		</div>
 		<div class="wrapper">
-			<div id="mCard">
+			<div id="card">
 				<h3 id="movieTitle"> Name of the Movie</h3>
 				<img src="assets/images/iconmonstr-video-camera-11.svg" alt="" id="iconM"  />
 				<div id="genre"></div>
