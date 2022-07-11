@@ -1,5 +1,16 @@
 var omdbID = "0000000";
 var omdbidLast = 0;
+var movieloader = document.getElementById("hideLoader");
+movieloader.style.display = "none";
+
+function randomLoader(){
+    loaderStyle = document.getElementById("lStyle");
+    loaderNum = Math.floor(Math.random() * (9 - 1 + 1) + 1);
+    console.log(loaderNum);
+    loaderStyle.classList.add("--" + loaderNum);
+
+}
+
 
 function generateID(){
     function getRandomInt() {
@@ -79,12 +90,13 @@ var movie = {
     console.log(data.Response)
     console.log(data.Poster)
     if (data.Response == "True" && data.Poster !== "N/A") {
+        movieloader.style.display = "none";
         const { Title } = data;
         const { Poster } = data;
         const { Plot } =  data;
         const { Genre } = data;
         const { Year } = data;
-        // var imgResize = image.slice(0, -11) + imgSize;
+
 
         localStorage.setItem("Movie", Title);
 
@@ -93,9 +105,9 @@ var movie = {
         document.getElementById("plot").innerHTML = "<b>Plot: </b>" + Plot;
         document.getElementById("genre").innerHTML = "<b>Genre: </b>" + Genre;
         document.getElementById("year").innerHTML = "<b>Year: </b>" + Year;
-        // document.getElementById("summary").innerHTML = instructions;
+
     } else {
-        console.log(data.Response)
+        // console.log(data.Response);
         generateID();
         movie.fetchMovie(omdbidLast);
     }
@@ -103,20 +115,20 @@ var movie = {
 };
 
 
-console.log("Before Event");
 startbtn.addEventListener('click', function (event) {
-    console.log("Event");
     var selectedButton = event.target;
     if (selectedButton.tagName != 'BUTTON')
         return;
         //very little jQuery below =D
     var diet = $('#tags').val();
     
-    console.log(diet);
     recipe.fetchRecipe(diet);
     //regenerate title ID if clicked again
     generateID();
     movie.fetchMovie(omdbidLast);
+    //displaying loader while waiting on response
+    randomLoader();
+    movieloader.style.display = "flex";
 
     var recipe123 = document.getElementById("saved-title");
     var lastRecipe = localStorage.getItem("Recipe");
