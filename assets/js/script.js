@@ -1,13 +1,17 @@
 var omdbID = "0000000";
 var omdbidLast = 0;
 var movieloader = document.getElementById("hideLoader");
+var loaderStyle = document.getElementById("lStyle");
+var loaderNum = 0;
+
 movieloader.style.display = "none";
 
 function randomLoader(){
-    loaderStyle = document.getElementById("lStyle");
-    loaderNum = Math.floor(Math.random() * (9 - 1 + 1) + 1);
+    
+    loaderNum = Math.floor(Math.random() * (9 - 2 + 2) + 2);
     console.log(loaderNum);
     loaderStyle.classList.add("--" + loaderNum);
+    console.log("--" + loaderNum);
 
 }
 
@@ -50,7 +54,6 @@ var recipe = {
 
     const { image } = data.recipes[0];
     const { title } = data.recipes[0];
-    // const { summary } = data.recipes[0];
     const { instructions } = data.recipes[0];
     console.log(instructions);
     var imgResize = image.slice(0, -11) + imgSize;
@@ -99,7 +102,7 @@ var movie = {
 
 
         localStorage.setItem("Movie", Title);
-
+        document.getElementById("iconM").style.display = "";
         document.getElementById("iconM").src = Poster;
         document.getElementById("movieTitle").innerText = Title;
         document.getElementById("plot").innerHTML = "<b>Plot: </b>" + Plot;
@@ -125,9 +128,12 @@ startbtn.addEventListener('click', function (event) {
     recipe.fetchRecipe(diet);
     //regenerate title ID if clicked again
     generateID();
+    document.getElementById("iconM").style.display = "none";
     movie.fetchMovie(omdbidLast);
     //displaying loader while waiting on response
+    loaderStyle.classList.remove("--" + loaderNum);
     randomLoader();
+    console.log(loaderNum);
     movieloader.style.display = "flex";
 
     var recipe123 = document.getElementById("saved-title");
