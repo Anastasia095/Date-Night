@@ -117,8 +117,7 @@ startbtn.addEventListener('click', function (event) {
     //regenerate title ID if clicked again
     generateID();
     movie.fetchMovie(omdbidLast);
-    saveLastCombo();
-    renderLastCombo();
+
     var recipe123 = document.getElementById("saved-title");
     var lastRecipe = localStorage.getItem("Recipe");
     recipe123.textContent=lastRecipe;
