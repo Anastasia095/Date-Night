@@ -49,13 +49,24 @@ background-color: #36f1cd;
 
 #title {
     padding: 0.5%;
+    font-weight: bold;
+    font-size: larger;
+    
     /* font-family: 'Neonderthaw', cursive; */
     /* font-family: 'Charmonman', cursive; */
     /* font-family: 'Homemade Apple', cursive; */
 }
 
+#previous {
+    padding: 0.5%;
+    font-weight: bold;
+    font-size: larger;
+}
+
 #movieTitle {
     padding: 0.5%;
+    font-weight: bold;
+    font-size: larger;
 
 }
 
@@ -73,28 +84,7 @@ background-color: #36f1cd;
 }
 
 
-/* Media query for carousel */
-@media(min-width: 1000px){
-    .item{
-        height: 100vh;
-    }
-    img{
-        object-fit: cover;
-    }
-}
 
-#mCard {
-    margin-left: 0.5%;
-    padding: 1%;
-    border-radius: 15px;
-    border: solid;
-    border-width: thin;
-
-    width: 30%;
-
-    background-color: #13c4a3;
-    
-}
 
 .selectMenu {
     display:block;
@@ -104,3 +94,5 @@ background-color: #36f1cd;
     padding: 0.5%;
     text-align: left;;
 }
+
+
