@@ -126,6 +126,8 @@ startbtn.addEventListener('click', function (event) {
     var lastMovie = localStorage.getItem("Movie");
     movie123.textContent=lastMovie;
 
+    document.getElementById("start").textContent="Get new combo!";
+
 
 });
 
