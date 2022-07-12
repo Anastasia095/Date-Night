@@ -75,7 +75,7 @@ var movie = {
     fetchMovie: function (titleID) {
 
         fetch(
-            "http://www.omdbapi.com/?i=tt"
+            "https://www.omdbapi.com/?i=tt"
             + titleID 
             + "&type=movie"
             + "&plot=short"
