@@ -47,8 +47,7 @@ var recipe = {
         .then((data) => this.displayRecipe(data));
     },
     displayRecipe: function (data) {
-    var imgSize = "312x231.jpg";
-
+    var imgSize = "480x360.jpg";
     const { image } = data.recipes[0];
     const { title } = data.recipes[0];
     const { instructions } = data.recipes[0];
