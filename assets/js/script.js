@@ -9,9 +9,7 @@ movieloader.style.display = "none";
 function randomLoader(){
     
     loaderNum = Math.floor(Math.random() * (9 - 2 + 2) + 2);
-    console.log(loaderNum);
     loaderStyle.classList.add("--" + loaderNum);
-    console.log("--" + loaderNum);
 
 }
 
@@ -49,13 +47,11 @@ var recipe = {
         .then((data) => this.displayRecipe(data));
     },
     displayRecipe: function (data) {
-    console.log(data.recipes);
     var imgSize = "312x231.jpg";
 
     const { image } = data.recipes[0];
     const { title } = data.recipes[0];
     const { instructions } = data.recipes[0];
-    console.log(instructions);
     var imgResize = image.slice(0, -11) + imgSize;
     //local storage start here
 
@@ -89,9 +85,6 @@ var movie = {
          .then((data) => this.displayMovie(data));
     },
     displayMovie: function (data) {
-    console.log(data);
-    console.log(data.Response)
-    console.log(data.Poster)
     if (data.Response == "True" && data.Poster !== "N/A") {
         movieloader.style.display = "none";
         const { Title } = data;
@@ -110,7 +103,6 @@ var movie = {
         document.getElementById("year").innerHTML = "<b>Year: </b>" + Year;
 
     } else {
-        // console.log(data.Response);
         generateID();
         movie.fetchMovie(omdbidLast);
     }
@@ -133,7 +125,6 @@ startbtn.addEventListener('click', function (event) {
     //displaying loader while waiting on response
     loaderStyle.classList.remove("--" + loaderNum);
     randomLoader();
-    console.log(loaderNum);
     movieloader.style.display = "flex";
 
     var recipe123 = document.getElementById("saved-title");
