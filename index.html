@@ -85,48 +85,55 @@
 			<!-- start button -->
 			<button class="button is-rounded" id="start">
 				Click for Combo!
-			</button>
-			
+			</button>			
 		</div>
-		<div class="wrapper">
-			<div id="card">
-				<h3 id="title"> Name of the Dish</h3>
-				<div class="selectMenu">
-					<p>Select Vegetarian Meal or Dessert. (Optional)</p>
-					<select id='tags'>
-						<option value="">No Preference</option>
-						<option value="vegetarian">Vegetarian</option>
-						<option value="dessert">Dessert</option>					
-					</select>
-				 </div>
-				<img src="assets/images/iconmonstr-eat-2.svg" alt="Utensil icon" id="icon" /></figure>
-				<div id="summary"></div>
+		<section class="mainContainer">
+			<div class="wrapper">
+				<div id="card">
+					<h3 id="title"> Name of the Dish</h3>
+					<div class="selectMenu">
+						<p>Select Vegetarian Meal or Dessert. (Optional)</p>
+						<select id='tags'>
+							<option value="">No Preference</option>
+							<option value="vegetarian">Vegetarian</option>
+							<option value="dessert">Dessert</option>					
+						</select>
+					</div>
+					<img src="assets/images/iconmonstr-eat-2.svg" alt="Utensil icon" id="icon" /></figure>
+					<div id="summary"></div>
+				</div>
 			</div>
-		</div>
-		<div>
+			<div class="wrapper">
+				<div id="card">
+					<h3 id="movieTitle"> Name of the Movie</h3>
+					<main class="loaderContainer" id="hideLoader">
+						<div class="item">
+							<i class="cssLoader --2" id="lStyle"></i>
+						</div>
+					</main>
+					<img src="assets/images/iconmonstr-video-camera-11.svg" alt="" id="iconM"  />
+					<div id="genre"></div>
+					<div id="year"></div>
+					<div id="plot"></div>
+				</div>
+			</div>
 			<div class="wrapper">
 				<div id="card">
 				<h2 id="previous">Previous Combinations:</h2>
 				<p>Recipe: <span id="saved-title"></span></p>
 				<p>Movie: <span id="saved-movie"></span></p>
+				<img src="assets/images/pholder.png" alt="Utensil and movie icon" id="iconH" />
 				</div>
-
 			</div>
-		</div>
-		<div class="wrapper">
-			<div id="card">
-				<h3 id="movieTitle"> Name of the Movie</h3>
-				<main class="loaderContainer" id="hideLoader">
-					<div class="item">
-						<i class="cssLoader --2" id="lStyle"></i>
-					</div>
-				</main>
-				<img src="assets/images/iconmonstr-video-camera-11.svg" alt="" id="iconM"  />
-				<div id="genre"></div>
-				<div id="year"></div>
-				<div id="plot"></div>
-			</div>
-		</div>	
+		</section>	
+		<footer>
+			<hr class="customHR">
+			<h1> © Super-trio 1.0</h1>
+			<h1 class="footerH1">GitHub:</h1>
+			<a href="https://github.com/mirandamorton1" target="_blank" class="button is-primary is-outlined is-small custBTN">Miranda</a>
+			<a href="https://github.com/punkvega" target="_blank" class="button is-primary is-outlined is-small custBTN">Chris</a>
+			<a href="https://github.com/Anastasia095" target="_blank" class="button is-primary is-outlined is-small custBTN">Anastasia</a>
+		</footer>
 		<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
 		<script>
 		bulmaCarousel.attach('#carousel-demo', {

@@ -136,7 +136,7 @@ startbtn.addEventListener('click', function (event) {
     movie123.textContent=lastMovie;
 
     document.getElementById("start").textContent="Get new combo!";
-
+    document.getElementById("iconH").src = "assets/images/placeHolder.png";
 
 });
 
